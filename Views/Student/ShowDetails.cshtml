@@ -1,0 +1,35 @@
+﻿@model WebApplication.Models.Student
+
+<h2>Student Details</h2>
+
+<div>
+    <p><b>Name:</b> @Model.Name</p>
+    <p><b>Age:</b> @Model.Age</p>
+    <p><b>Department:</b> @Model.Department?.Name</p>
+</div>
+
+<h3>Courses & Grades</h3>
+@if (Model.StuCrsRes != null && Model.StuCrsRes.Any())
+{
+    <table border="1" cellpadding="5">
+        <thead>
+            <tr>
+                <th>Course</th>
+                <th>Grade</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var crs in Model.StuCrsRes)
+            {
+                <tr>
+                    <td>@crs.Course?.Name</td>
+                    <td>@crs.Grade</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No courses enrolled.</p>
+}

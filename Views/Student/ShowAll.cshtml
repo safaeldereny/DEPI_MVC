@@ -1,0 +1,27 @@
+﻿@model List<WebApplication.Models.Student>
+
+<h2>All Students</h2>
+
+<table border="1" cellpadding="5">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Department</th>
+            <th>Details</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>@student.Name</td>
+                <td>@student.Age</td>
+                <td>@student.Department?.Name</td>
+                <td>
+                    <a asp-controller="Student" asp-action="ShowDetails" asp-route-id="@student.Id">Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
