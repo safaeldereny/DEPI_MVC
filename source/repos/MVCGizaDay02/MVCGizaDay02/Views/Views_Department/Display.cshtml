@@ -1,0 +1,27 @@
+﻿@using MVCGizaDay02.ViewModels
+@model DepartmentDisplayViewModel
+
+<h2>Department: @Model.DepartmentName</h2>
+<h4>Department State: @Model.DepartmentState</h4>
+
+<label>Select Student over 25:</label>
+<select>
+    @foreach (var student in Model.StudentsOver25)
+    {
+        <option value="@student.Value">@student.Text</option>
+    }
+</select>
+
+<h2>Department Info</h2>
+
+<p><strong>Name:</strong> @Model.DepartmentName</p>
+<p><strong>State:</strong> @Model.DepartmentState</p>
+
+<h3>Students older than 25</h3>
+
+<select>
+    @foreach(var student in Model.StudentsOver25)
+    {
+        <option value="@student.Value">@student.Text</option>
+    }
+</select>
