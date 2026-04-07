@@ -1,0 +1,16 @@
+﻿@model Course
+
+<h2>Delete Course</h2>
+
+<h3>Are you sure?</h3>
+
+<p>@Model.Name</p>
+<p>@Model.Instructor</p>
+<p>@Model.Duration</p>
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit">Delete</button>
+</form>
+
+<a asp-action="Index">Back</a>
