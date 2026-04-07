@@ -8,7 +8,7 @@ namespace CourseApp
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            builder.Services.AddDbContext<AppDbContext>(options =>
+            builder.Services.AddDbContext<Data.AppDbContext>(options =>
             options.UseSqlServer("Server=.;Database=CourseDB;Trusted_Connection=True;TrustServerCertificate=True;"));
 
             // Add services to the container.
