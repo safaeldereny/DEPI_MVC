@@ -1,0 +1,16 @@
+﻿@model MyApp.Models.ProductViewModel
+
+<h2 class="mb-4">Edit Product</h2>
+
+<form asp-action="Update" method="post">
+    <partial name="_ProductForm" model="Model" />
+    
+    <div class="mt-3">
+        <button type="submit" class="btn btn-warning">Update</button>
+        <a asp-action="Index" class="btn btn-secondary">Back</a>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
